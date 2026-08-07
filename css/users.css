@@ -1,0 +1,110 @@
+/*
+
+PANTALLA DE SELECCION DE USUARIOS
+SCREEN SELECTION OF USSERS
+
+PANTALLA 2
+
+*/
+
+.account-status{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.status-dot{
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #10b981;
+}
+
+.account-email{
+    color: var(--color-text-muted);
+    font-size: var(--font-size-sm);
+}
+
+body{
+    height: 100vh;
+    margin: 0;
+
+    background-color: var(--color-bg);
+    font-family: var(--font-family);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.subtitle-users-big{
+    font-size: var(--font-size-base);
+    margin-top: 30px;
+    text-align: center;
+} 
+
+.app-title-display{
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+
+.users-btn-grid{
+    border-radius: var(--radius-base);
+    background: var(--color-card-bg);
+    margin-right: 10px;
+    padding: 30px;
+}
+.btn:hover{
+    background: #374872;
+}
+
+.user-avatar-administrador{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 5px;
+    border-radius: var(--radius-lg);
+
+    width: 65px;
+    height: 65px;
+    
+    font-weight: bold;
+    font-size: var(--font-size-lg);
+    color: var(--color-text);
+    background: var(--color-primary);
+}
+
+.user-avatar-cajero{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 5px;
+    border-radius: var(--radius-lg);
+
+    width: 65px;
+    height: 65px;
+    
+    font-weight: bold;
+    font-size: var(--font-size-lg);
+    background: var(--color-avatar-cj);
+    color: var(--color-text);
+}
+
+.user-name{
+    color: var(--color-text);
+    text-align: center;
+}
+
+.user-role-administrador{
+    margin-top: 4px;
+    color: var(--color-primary);
+    text-align: center;
+}
+
+.user-role-cajero{
+    margin-top: 4px;
+    color: var(--color-text-muted);
+    text-align: center;
+}

@@ -1,0 +1,45 @@
+/*
+
+VARIABLES ROOT GLOBALES
+
+*/
+
+:root {
+ /* Colores de fondo */ 
+ 
+ --color-bg: #0f1729; /* Fondo principal */
+ --color-card-bg: #1a2236; /* Fondo de tarjetas */
+ --color-sidebar-bg: #111827; /* Fondo menú lateral */
+ --color-avatar-cj: #45556C; /*color de avatar de cajero, gris neutro*/
+
+ /* Links */
+  --color-link:       #60a5fa;  /* azul claro — links clickeables */
+  --color-link-hover: #93c5fd;  /* azul más claro al pasar el mouse */
+
+ /* Colores primarios */
+ --color-primary: #2563eb; /* Azul principal (botones, tabs activos) */
+ --color-primary-hover: #1d4ed8;
+ 
+ /* Colores de estado */
+ --color-free: #10b981; /* Verde — mesa libre */
+ --color-busy: #f59e0b; /* Naranja — mesa ocupada */
+ --color-in-pay: #3b82f6; /* Azul — mesa en pago */
+ --color-waiting: #f59e0b; /* Naranja — domicilio pendiente */
+ --color-in-coming: #3b82f6; /* Azul — domicilio en camino */
+ --color-delivered: #10b981; /* Verde — domicilio entregado */
+ 
+ /* Texto */
+ --color-text: #f1f5f9; /* Texto principal claro */
+ --color-text-muted: #94a3b8; /* Texto secundario gris */
+
+ /* Tipografía */
+ --font-family: sans-serif, Arial, Helvetica;
+ --font-size-base: 16px;
+ --font-size-sm: 14px;
+ --font-size-lg: 20px;
+ 
+ /* Espaciado y forma */
+ --radius-base: 8px;
+ --radius-lg: 12px;
+ --spacing-base: 16px;
+}

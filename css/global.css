@@ -1,0 +1,215 @@
+/*
+
+GLOBAL, CLASES REUTILIZABLES
+REUZABLE CLASSES
+
+*/
+
+/*Boton reutilizable*/
+.btn {
+ padding: 12px 24px;
+ border: none;
+ border-radius: var(--radius-base);
+ font-size: var(--font-size-base);
+ cursor: pointer;
+ transition: background 0.2s;
+}
+.btn-primary {
+ background: var(--color-primary);
+ color: #ffffff;
+}
+.btn-secondary {
+ background: #334155;
+ color: #f1f5f9;
+}
+
+/* Etiquetas de estado con color */
+.badge {
+ padding: 4px 12px;
+ border-radius: 20px;
+ font-size: 13px;
+ font-weight: 600;
+}
+.badge--pendiente { background: #78350f; color: var(--color-ocupada); }
+.badge--en-camino { background: #1e3a5f; color: var(--color-en-pago); }
+.badge--entregado { background: #064e3b; color: var(--color-libre); }
+.badge--ocupada { background: #78350f; color: var(--color-ocupada); }
+
+/*componente seleccion de usuario*/
+.user-card {
+ background: var(--color-card-bg);
+ border: 1px solid #2d3748;
+ border-radius: var(--radius-lg);
+ padding: 24px 16px;
+ text-align: center;
+ cursor: pointer;
+}
+.user-avatar {
+ width: 56px; height: 56px;
+ border-radius: 12px;
+ background: var(--color-primary);
+ color: #fff;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+  font-weight: bold;
+ margin: 0 auto 12px;
+}
+
+/*componentes para el PIN, PIN-KEYPAD*/
+.pin-keypad {
+ display: grid;
+ grid-template-columns: repeat(3, 1fr);
+ gap: 12px;
+ margin-left: auto;
+ margin-right: auto;
+}
+.pin-key {
+ width: 110px; height: 68px;
+ border-radius: 12px;
+ background: #1e2d45;
+ font-size: 20px;
+ color: var(--color-text);
+}
+.pin-dot {
+ width: 14px; height: 14px;
+ border-radius: 50%;
+ border: 2px solid #64748b;
+ background: transparent;
+
+ transition: background 0.2s, border-color 0.2s;
+}
+.pin-dot--filled {
+ background: var(--color-primary);
+ border-color: var(--color-primary);
+}
+
+/*tarjetas de mesas con estados*/
+.card-free, .card-busy, .card-in-pay {
+ border-radius: var(--radius-lg);
+ padding: 24px;
+ text-align: center;
+ cursor: pointer;
+ border: 2px solid;
+}
+.card-free { border-color: var(--color-libre); color: var(--color-libre);
+}
+.card-busy { border-color: var(--color-ocupada); color: var(--colorocupada); }
+.card-in-pay { border-color: var(--color-en-pago); color: var(--color-enpago); }
+
+
+/*icono principal de WICKY*/
+.app-icon{
+    width: 80px;
+    height: 80px;
+    background-color: var(--color-primary);
+    border-radius: 50%;
+
+    margin: 0 auto 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.app-icon img{
+    width: 70%;
+    height: 70%;
+    object-fit: contain;
+}
+
+/*subtitulos de la apk*/
+.subtitle {
+    margin-top: 8px;
+    color: var(--color-text-muted);
+}
+
+/*titulo de la aplicacion, WICKY*/
+.app-title{
+    color: var(--color-text);
+    margin: 0;
+    font-size: 30px;
+}
+
+/*avatar de administrador (letras grandes) pantallas 2, 3*/
+.user-avatar-administrador{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 5px;
+    border-radius: var(--radius-lg);
+
+    width: 65px;
+    height: 65px;
+    
+    font-weight: bold;
+    font-size: var(--font-size-lg);
+    color: var(--color-text);
+    background: var(--color-primary);
+}
+
+/*avatar de cajero(letras grandes) pantalla 2, 3*/
+.user-avatar-cajero{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 5px;
+    border-radius: var(--radius-lg);
+
+    width: 65px;
+    height: 65px;
+    
+    font-weight: bold;
+    font-size: var(--font-size-lg);
+    background: var(--color-avatar-cj);
+    color: var(--color-text);
+}
+
+/*nombre del cajero o administrador de color blanco*/
+.user-name{
+    color: var(--color-text);
+    text-align: center;
+}
+
+/*role de cliente, administrador azul*/
+.user-rol-administrador{
+    margin-top: 4px;
+    color: var(--color-primary);
+    text-align: center;
+}
+
+/*alinear estatus dot con correo*/
+.account-status{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+/*circulo de estado color verde activo*/
+.status-dot{
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #10b981;
+}
+
+/*email bajo el título WICKY*/
+.account-email{
+    color: var(--color-text-muted);
+    font-size: var(--font-size-sm);
+}
+
+/*card de fondo de aplicacion*/
+.card{
+    display: flex;
+    flex-direction: column;
+    gap:var(--spacing-base);
+
+    width: 400px;
+    padding: 40 px;
+    border-radius: var(--radius-lg);
+
+    background-color: var(--color-card-bg);
+    box-shadow: 0 0 20px #0c0c0c;
+}
