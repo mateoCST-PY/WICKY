@@ -9,7 +9,7 @@ public class main {
 
         userDAO usuarioDAO = new userDAO();
         
-        usuarioDAO.createUser("1036252469", "juan castano", "3132163995", "juan@gmai.com", "marinilla");
+        usuarioDAO.deleteUser(3);
 
         usuarioDAO.listUser();
 

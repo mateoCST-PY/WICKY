@@ -1,6 +1,5 @@
 package model;
 
-import model.connection;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -10,24 +9,28 @@ import java.sql.SQLException;
 public class userDAO {
 
     //metod used for create new user in the data base
-    public void createUser(String documento, String nombre_usuario, String telefono, String email, String direccion) throws SQLException {
+    public void createUser(String documento, String nombre_usuario, String telefono, String email, String direccion) {
          
-        Connection conexion = connection.connect();
+        try {
+            Connection conexion = connection.connect();
 
-        String sql = "INSERT INTO usuarios (documento, nombre_usuario, telefono, email, direccion) VALUES (?, ?, ?, ?, ?)";
+            String sql = "INSERT INTO usuarios (documento, nombre_usuario, telefono, email, direccion) VALUES (?, ?, ?, ?, ?)";
 
-        PreparedStatement ps = conexion.prepareStatement(sql);
+            PreparedStatement ps = conexion.prepareStatement(sql);
 
-        ps.setString(1, documento);
-        ps.setString(2, nombre_usuario);
-        ps.setString(3, telefono);
-        ps.setString(4, email);
-        ps.setString(5, direccion);
+            ps.setString(1, documento);
+            ps.setString(2, nombre_usuario);
+            ps.setString(3, telefono);
+            ps.setString(4, email);
+            ps.setString(5, direccion);
 
-        ps.executeUpdate();
+            ps.executeUpdate();
 
-        ps.close();
-        conexion.close();
+            ps.close();
+            conexion.close();
+        } catch (Exception e) {
+            System.out.println("ocurrio un error" + e.getMessage());
+        }
 
     }
 
@@ -70,6 +73,70 @@ public class userDAO {
             
             System.out.println("ocurrio un error" + e.getMessage());
 
+        }
+    }
+
+    //This mettod update the user
+    public void updateUser(int id_usuario, String documento, String nombre_usuario, String telefono, String email, String direccion){
+        
+        String sql = "UPDATE usuarios SET documento = ?, nombre_usuario = ?, telefono = ?, email = ?, direccion = ? WHERE id_usuario = ?";
+
+        try{
+
+            Connection conexion = connection.connect();
+
+            PreparedStatement ps = conexion.prepareStatement(sql);
+
+            ps.setString(1, documento);
+            ps.setString(2, nombre_usuario);
+            ps.setString(3, telefono);
+            ps.setString(4, email);
+            ps.setString(5, direccion);
+            ps.setInt(6, id_usuario);
+
+            //updateFiles check if something user in the db was been update
+            int updateFiles = ps.executeUpdate();
+
+            if (updateFiles > 0) {
+                System.out.println("se actualizo " + updateFiles + " usuarios con exito");
+            }else{
+                System.out.println("no se guardaron los cambios");
+            }
+
+            ps.close();
+            conexion.close();
+
+        }catch(SQLException e){
+            System.out.println("ocurrio un error" + e.getMessage());
+        }
+    
+    }
+
+    public void deleteUser(int id_usuario){
+        
+        String sql = "DELETE FROM usuarios WHERE id_usuario = ?";
+
+        try{
+
+            Connection conexion = connection.connect();
+
+            PreparedStatement ps = conexion.prepareStatement(sql);
+
+            ps.setInt(1, id_usuario);
+
+            int updateFiles = ps.executeUpdate();
+
+            if (updateFiles > 0) {
+                System.out.println("se elimino el usuario");
+            }else{
+                System.out.println("no se logro eliminar el usuario");
+            }
+
+            ps.close();
+            conexion.close();
+
+        }catch(SQLException e){
+            System.out.println("ocurrio un error" + e.getMessage());
         }
     }
     
