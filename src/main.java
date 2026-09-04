@@ -1,15 +1,18 @@
-import java.sql.SQLException;
 import java.sql.Connection;
-import model.userDAO;
+import java.sql.SQLException;
+
 import model.connection;
+import model.userDAO;
 
 
 public class main {
     public static void main(String[] args) throws SQLException{
 
         userDAO usuarioDAO = new userDAO();
+
+        //usuarioDAO.createUser("1036252466", "Mateo Hurtado", "3135953670", "mateo.hurtado@example.com", "Cra 12 # 34-56");
         
-        usuarioDAO.deleteUser(3);
+        // usuarioDAO.deleteUser(3);
 
         usuarioDAO.listUser();
 
