@@ -8,4 +8,7 @@ import com.wicky.model.Usuario;
 // It is responsible for providing CRUD operations and database access methods for the Usuario entity.
 
 public interface UserRepository extends JpaRepository<Usuario, Long> {
+    // Custom method to check if a user with the given document already exists in
+    // the database.
+    boolean existsByDocumento(String documento);
 }

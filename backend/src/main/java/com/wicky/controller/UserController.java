@@ -1,7 +1,10 @@
 package com.wicky.controller;
 
 import java.util.List;
+import java.util.Map;
 
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -10,6 +13,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.wicky.model.Usuario;
 import com.wicky.repository.UserRepository;
+
+import jakarta.validation.Valid;
 
 @RestController
 @RequestMapping("/usuarios")
@@ -32,7 +37,11 @@ public class UserController {
     }
 
     @PostMapping
-    public Usuario crear(@RequestBody Usuario usuario) {
-        return repo.save(usuario);
+    public ResponseEntity<?> crear(@Valid @RequestBody Usuario usuario) {
+        if (repo.existsByDocumento(usuario.getDocumento())) {
+            return ResponseEntity.status(HttpStatus.CONFLICT)
+                    .body(Map.of("documento", "Ya existe un usuario con ese documento"));
+        }
+        return ResponseEntity.ok(repo.save(usuario));
     }
 }
